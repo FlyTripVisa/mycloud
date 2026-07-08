@@ -1,14 +1,25 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "mycloud",
-	"main": "./workers/app.ts",
-	"compatibility_date": "2025-10-08",
-	"compatibility_flags": ["nodejs_compat"],
-	"observability": {
-		"enabled": true
-	},
-	"upload_source_maps": true,
-	"vars": {
-		"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-	}
+  "name": "mycloud",
+  "compatibility_date": "2024-10-22",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MY_BUCKET",
+      "bucket_name": "mydata"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "file_manager_db",
+      "database_id": "your-database-id-here"
+    }
+  ],
+  "env": {
+    "production": {
+      "account_id": "b73b80fa62deef032d3c08248cf2f30b"
+    }
+  }
 }
