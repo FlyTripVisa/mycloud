@@ -1,4 +1,3 @@
-// workers/app.ts
 import { createWorkerEntrypoint } from "cloudflare:workers";
 import { createRequestHandler } from "react-router";
 
