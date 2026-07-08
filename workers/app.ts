@@ -1,23 +1,7 @@
-import { createRequestHandler } from "react-router";
+import { unstable_createDevServer } from "@remix-run/cloudflare-pages";
 
-declare module "react-router" {
-	export interface AppLoadContext {
-		cloudflare: {
-			env: Env;
-			ctx: ExecutionContext;
-		};
-	}
+if (process.env.NODE_ENV === "development") {
+  await unstable_createDevServer({
+    liveReload: true,
+  });
 }
-
-const requestHandler = createRequestHandler(
-	() => import("virtual:react-router/server-build"),
-	import.meta.env.MODE,
-);
-
-export default {
-	fetch(request, env, ctx) {
-		return requestHandler(request, {
-			cloudflare: { env, ctx },
-		});
-	},
-} satisfies ExportedHandler<Env>;
