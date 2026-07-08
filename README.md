@@ -100,10 +100,49 @@ You can then promote a version to production after verification or roll it out p
 npx wrangler versions deploy
 ```
 
-## Styling
+## Project Structure 
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+mycloud/
+├── app/
+│   ├── root.tsx                 # মূল রুট কম্পোনেন্ট
+│   ├── entry.client.tsx         # ক্লায়েন্ট সাইড এন্ট্রি পয়েন্ট
+│   ├── entry.server.tsx         # সার্ভার সাইড এন্ট্রি পয়েন্ট
+│   ├── welcome/
+│   │   └── welcome.tsx          # ওয়েলকাম পেজ
+│   ├── routes/
+│   │   ├── _index.tsx           # হোম পেজ
+│   │   ├── login.tsx            # লগইন পেজ
+│   │   ├── signup.tsx           # সাইনআপ পেজ
+│   │   ├── dashboard.tsx        # ড্যাশবোর্ড
+│   │   ├── files/
+│   │   │   ├── _index.tsx       # ফাইল লিস্ট পেজ
+│   │   │   ├── [id].tsx         # ফাইল ডিটেইল পেজ
+│   │   │   └── shared/
+│   │   │       └── [id].tsx     # শেয়ার করা ফাইল পেজ
+│   │   └── profile/
+│   │       └── _index.tsx       # প্রোফাইল পেজ
+│   ├── components/
+│   │   ├── FileCard.tsx         # ফাইল কার্ড কম্পোনেন্ট
+│   │   ├── FileGrid.tsx         # ফাইল গ্রিড কম্পোনেন্ট
+│   │   ├── FileManager.tsx      # মূল ফাইল ম্যানেজার কম্পোনেন্ট
+│   │   ├── Navigation.tsx       # নেভিগেশন বার
+│   │   ├── AuthForm.tsx         # অথ ফর্ম কম্পোনেন্ট
+│   │   └── UploadButton.tsx     # আপলোড বাটন কম্পোনেন্ট
+│   ├── lib/
+│   │   ├── auth.ts              # অথেনটিকেশন ফাংশন
+│   │   ├── storage.ts           # স্টোরেজ (R2) ফাংশন
+│   │   └── utils.ts             # ইউটিলিটি ফাংশন
+│   └── app.css                  # গ্লোবাল স্টাইল
+├── workers/
+│   └── app.ts                   # Cloudflare Worker এন্ট্রি পয়েন্ট
+├── public/
+│   ├── favicon.ico
+│   └── logo.svg
+├── .gitignore
+├── .env                         # এনভায়রনমেন্ট ভ্যারিয়েবল
+├── package.json
+├── react-router.config.ts       # React Router কনফিগ
+├── vite.config.ts               # Vite কনফিগ
+├── wrangler.toml                # Cloudflare Wrangler কনফিগ
+├── worker-configuration.d.ts    # Worker টাইপ ডিফিনিশন
+└── README.md
