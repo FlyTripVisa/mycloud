@@ -131,7 +131,7 @@ web_modules/
 .env.production.local
 .env.local
 
-# parcel-bundler cache (https://parceljs.org/)
+# Parcel cache (https://parceljs.org/)
 .cache
 .parcel-cache
 
@@ -145,9 +145,7 @@ dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+public
 
 # vuepress build output
 .vuepress/dist
@@ -189,8 +187,6 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,node,git
-
 ### Wrangler ###
 .wrangler/
 .env*
@@ -201,3 +197,144 @@ dist
 ### React Router ###
 .react-router/
 /build/
+
+# Cloudflare Workers specific
+.cloudflare/
+.cf-cache/
+tmp/
+.cf-types/
+
+# Remix specific
+.remix/
+public/build/
+
+# Temporary build outputs
+dist/
+.build/
+output/
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Lock files
+pnpm-lock.yaml
+yarn.lock
+
+# Secrets
+*.key
+*.pem
+*.crt
+*.cert
+!README.md
+
+# Production builds
+server-build/
+
+# MyCloud project specific
+mycloud/
+mycloud-*/
+mycloud_*/
+mycloud.*.tmp
+mycloud-temp/
+mycloud_build/
+mycloud_dist/
+mycloud_output/
+mycloud_server/
+mycloud_client/
+
+# Project artifacts
+artifacts/
+.myproject/
+myproject/
+myproject-*/
+
+# Cloudflare specific for mycloud
+mycloud.wrangler/
+mycloud.cloudflare/
+mycloud.cf-cache/
+
+# Local development
+local-dev/
+local_config/
+dev_config/
+mycloud_dev/
+mycloud_local/
+
+# Backup files
+*~.bak
+*.backup
+*.bak
+*.old
+*.orig
+.bak/
+.backup/
+
+# Environment specific
+.env.local
+.env.production
+.env.development
+.env.staging
+.env.test
+.env.dev
+.env.prod
+.env.stage
+
+# Configuration backups
+config.bak
+config.backup
+*.config.bak
+*.conf.bak
+
+# Project specific cache
+mycloud_cache/
+mycloud_node_modules/
+mycloud_dist_cache/
+
+# IDE specific for project
+.project/
+.c9/
+*.launch
+.settings/
+mycloud.code-workspace
+mycloud.iml
+mycloud.iws
+mycloud.ipr
+
+# Deployment specific
+.deploy/
+deployments/
+mycloud_deploy/
+mycloud_staging/
+mycloud_production/
+mycloud_prod/
+
+# Testing
+test-results/
+mycloud_test/
+mycloud_tests/
+coverage/
+.nyc_output/
+.jest/
+
+# Browser specific
+.browser-cache/
+mycloud_browser/
+mycloud_chrome/
+mycloud_firefox/
+
+# System files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
